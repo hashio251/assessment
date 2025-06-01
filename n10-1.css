@@ -1,0 +1,35 @@
+body{
+  background-color: #ebaa04;
+  color: #f7fbfb;
+  width: 400px;
+  margin-right: auto;
+  margin-left: auto; /* 自動にすると真ん中に指定される */
+}
+
+h1{
+  text-align: center;
+  border-bottom: dotted #f7fbfb;
+  line-height: 1.9em;
+  margin-bottom: 2em;
+}
+
+p{
+  font-size: large;
+  font-weight: bold;
+  color: #f7fbfb;
+}
+
+input{
+  height: 20px;
+  margin-right: 1em;
+}
+
+button{
+  width: 100px;
+  height: 35px;
+  color: #f7fbfb;
+  font-weight: bold;
+  padding: 5px 20px;
+  background-color: #79b733;
+}
+
