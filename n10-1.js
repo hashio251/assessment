@@ -14,14 +14,28 @@ assessmentButton.addEventListener( // イベント検知設定の追加
 
 // 診断結果表示エリアの作成
 resultDivision.innerText = '' // divタグをから文字で上書きすることで、空にしている
-const header = document.createElement('h3'); // h３タグの作成
-header.innerText = '診断結果'; // タグの内側のテキストを設定
-resultDivision.appendChild(header); // divタグの子要素として追加
+// headerDivision の作成
+const headerDivision = document.createElement('div'); // divタグの作成
+headerDivision.setAttribute('class', 'card-header text-bg-primary');
+headerDivision.innerText = '診断結果'; // タグの内側のテキストを設定
+resultDivision.appendChild(headerDivision); // divタグの子要素として追加
 
-const paragraph = document.createElement('p');
+// bodyDivisionの作成
+const bodyDivision = document.createElement('div');
+bodyDivision.setAttribute('class', 'card-body'); //bootstrap用のclassを設定
+const paragraph = document.createElement('p'); //pタグの作成
+paragraph.setAttribute('class', 'card-text'); // class設定
 const result = assessment(userName);
 paragraph.innerText = result; // 診断結果を作成
-resultDivision.appendChild(paragraph); // pタグの内側のテキストを設定
+bodyDivision.appendChild(paragraph)
+resultDivision.appendChild(bodyDivision); // divタグの内側のテキストを設定
+
+// resultDivision に Bootstrap のスタイルを適用する
+resultDivision.setAttribute('class', 'card');
+
+// headerDivision と bodyDivision を resultDivision に差し込む
+resultDivision.appendChild(headerDivision);
+resultDivision.appendChild(bodyDivision);
 
 // X投稿ボタンの作成
 // (ツイートエリアが診断結果を押した際に消える動作の作成)
